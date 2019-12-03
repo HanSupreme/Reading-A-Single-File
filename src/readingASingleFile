@@ -1,0 +1,40 @@
+public class readingASingleFile {
+	
+	static String line;
+
+	public static void main(String[] args) {
+		
+		problemOne();
+
+	}
+	
+	public static void problemOne() {
+		
+		try {
+			
+			String location = ("C:\\Users\\perscholas_student\\Desktop\\hello.txt");
+			File file = new File(location);
+			Scanner input = new Scanner(file);
+
+			ArrayList<String> info = new ArrayList<String>();
+			
+			while (input.hasNextLine()) {
+				line = input.nextLine();
+				info.add(new String(line));
+				input.close();
+			}
+			
+			for (String i : info) { //printing
+				System.out.println(i);
+			}
+			
+			for (int i = info.size() - 1; i >= 0; --i) { //printing backwards
+				System.out.println(info.get(i));
+				}
+		
+		} catch (IOException e) {
+			System.out.println("Error!");
+		}	
+	}
+  
+  }
